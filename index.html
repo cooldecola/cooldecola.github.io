@@ -1,107 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpetual Motion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
+    <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
 
-    <!-- MAIN TITLE -->
-    <h1 id="main-Title">Perpetual Motion</h1>
+    <div id = "home-div">
+        <h1>Perpetual Motion</h1>
+        <h3>Usama's Design Portfolio</h3>
+        <img id="main_img" src="img/Delaunay_Triangulation.svg" alt="" id="homepage_img">
+    </div>
 
 
-    <!-- NAVIGATION -->
+    <div class = "spacer-div"></div>
+
+    <!-- NAVIGATION BAR -->
     <nav class="navigation">
         <a href="index.html">Home</a>
-        <a href="about.html">Contact</a>
+        <a href="about.html">About Me</a>
         <a href="contact.html">Contact</a>
     </nav>
 
-    <br> <br>
-    <hr>
-
-
+    <br><br><br>
 
     <!-- ARTICLE LIST -->
-    <h2 class="article-Title">Creating a Mesh for CFD Analysis on Rocket Air-Brakes Using Gmsh</h2>
-    <img src="img/mesh_1.png" width="600" alt="">
-    <p>The Intercollegiate Rocket Engineering Competition (IREC) highly values
-        the precision of reaching target apogee, which for our category was 10,000 ft.
-        Over/under achieving the height would cost points during competition.
-        Therefore in order to capitalize on this rule our recovery team developed a
-        clever design to partially control aerodynamic forces through the use of an…
-    </p>
 
-    <a href="create_mesh.html">
-        <button class="read-More-Button">Read More</button>
-    </a>
-    <br><br><br><br>
-    
+
+    <div class = "article-container">
+        <div class = "article-title">
+            <a href="create_mesh.html">
+                <h2>Creating a Mesh for a CFD Analysis on a Rocket Air-Brakes Using Gmsh</h2>
+            </a>
+        </div>
+        <div class = "article-description">
+            <p>
+                The Intercollegiate Rocket Engineering Competition (IREC) highly values
+                the precision of reaching target apogee, which for our category was 10,000 ft.
+                Over/under achieving the height would cost points during competition.
+                Therefore in order to capitalize on this rule our recovery team developed a
+                clever design to partially control aerodynamic forces through the use of an…
+            </p>
+        </div>
+        <div class = "article-img">
+            <a href="create_mesh.html">
+                <img class = "article-pics" src="img/mesh_1.png" width="500" alt="">
+            </a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+
+    <div class = "article-container">
+        <div class = "article-title">
+            <a href="fea_railroad.html">
+                <h2 class="article-Title">Finite Element Analysis of a Railroad Bridge (Using MATLAB and ANSYS) - MCG 4102</h2>
+            </a>
+        </div>
+        <div class = "article-description">
+            <p>Abstract This paper uses Finite Element Analysis (FEA) to analyze the
+                deflection and failure criteria of a steel railroad bridge.
+                This was done by first writing a code in MATLAB to determine
+                the displacements at specific points (nodes) on one side of
+                the bridge when a downward static load of 110000 lbf was applied equally…
+            </p>
+        </div>
+        <div class = "article-img">
+            <a href="fea_railroad.html">
+                <img class = "article-pics" src="img/fea_1.png" width="500" alt="">
+            </a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class = "article-container">
+        <div class = "article-title">
+            <a href="recovery_system.html">
+                <h2 class="article-Title">Building the Recovery System of a Rocket</h2>
+            </a>
+        </div>
+        <div class = "article-description">
+            <p>The University of Ottawa Rocket Team is a relatively new team at uOttawa
+                and we competed in the Intercollegiate Rocket Engineering Competition
+                (IREC) for the first time in June 2018 placing 17th out of 48 teams
+                in our specific division, which was the 10,000 ft-COTS (commercially off the shelf).
+                The part that I was responsible…
+            </p>
+        </div>
+        <div class = "article-img">
+            <a href="recovery_system.html">
+                <img class = "article-pics" src="img/rec_sys_cover.PNG" width="500" alt="">
+            </a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class = "article-container">
+        <div class = "article-title">
+            <a href="sim_heat_tr.html">
+                <h2 class="article-Title">Simulating Heat Transfer in C++</h2>
+            </a>
+            
+        </div>
+        <div class = "article-description">
+            <p>
+                The uOttawa Rocketry team was founded in Summer, 2016. My colleagues and
+                I planned to design and fabricate a hybrid-propellant rocket for a competition
+                called the Intercollegiate Rocket Engineering Competition (IREC). IREC is held
+                in Utah and universities from around the world participate in it each year.
+                Before beginning a design encompassing all parts of…
+            </p>
+        </div>
+        <div class = "article-img">
+            <a href="sim_heat_tr.html">
+                <img class = "article-pics" src="img/cfd_1.png" alt="" width="500">
+            </a>
+        </div>
+    </div>
+
+
+    <br><br><br>
+
+    <div class = "article-container">
+        <div class = "article-title">
+            <a href="hybrid_engine.html">
+                <h2 class="article-Title">Designing and Making a Hybrid Engine for a Rocket</h2>
+            </a>
+        </div>
+        <div class = "article-description">
+            <p>
+                The uOttawa Rocketry team was founded in Summer, 2016. My colleagues and
+                I planned to design and fabricate a hybrid-propellant rocket for a competition
+                called the Intercollegiate Rocket Engineering Competition (IREC). IREC is held
+                in Utah and universities from around the world participate in it each year.
+                Before beginning a design encompassing all parts of…
+            </p>
+        </div>
+        <div class = "article-img">
+            <a href="hybrid_engine.html">
+                <img class = "article-pics" src="img/hybrid_prop.png" width="500" alt="">
+            </a>
+        </div>
+    </div>
+
     <!--  -->
-
-    <h2 class="article-Title">Finite Element Analysis of a Railroad Bridge (Using MATLAB and ANSYS) - MCG 4102</h2>
-    <img src="img/fea_1.png" alt="">
-    <p>Abstract This paper uses Finite Element Analysis (FEA) to analyze the
-        deflection and failure criteria of a steel railroad bridge.
-        This was done by first writing a code in MATLAB to determine
-        the displacements at specific points (nodes) on one side of
-        the bridge when a downward static load of 110000 lbf was applied equally…
-    </p>
-
-    <a href="fea_railroad.html">
-        <button class="read-More-Button">Read More</button>
-    </a>
-    <br><br><br><br>
-    
-    <!--  -->
-
-    <h2 class="article-Title">Building the Recovery System of a Rocket</h2>
-    <img src="img/rec_sys_cover.PNG" width="500" alt="">
-    <p>The University of Ottawa Rocket Team is a relatively new team at uOttawa
-        and we competed in the Intercollegiate Rocket Engineering Competition
-        (IREC) for the first time in June 2018 placing 17th out of 48 teams
-        in our specific division, which was the 10,000 ft-COTS (commercially off the shelf).
-        The part that I was responsible…
-    </p>
-
-    <a href="recovery_system.html">
-        <button class="read-More-Button">Read More</button>
-    </a>
-    <br><br><br><br> 
-
-    <!--  -->
-    
-    <h2 class="article-Title">Simulating Heat Transfer in C++</h2>
-    <img src="img/cfd_1.png" alt="">
-    <p>In order to improve my C++ skills and also learn
-        more about computational methods I decided to take on a small project
-        to conduct a heat transfer simulation using the finite difference method
-        in C++. I decided to use a simple square geometry and made the following
-        assumptions: System is steady…
-    </p>
-    <a href="sim_heat_tr.html">
-        <button class="read-More-Button">Read More</button>
-    </a>
-    <br><br><br><br>
-
-    <!--  -->
-
-    <h2 class="article-Title">Designing and Making a Hybrid Engine for a Rocket</h2>
-    <img src="img/hybrid_prop.png" width="600" alt="">
-    <p>
-        The uOttawa Rocketry team was founded in Summer, 2016. My colleagues and
-        I planned to design and fabricate a hybrid-propellant rocket for a competition
-        called the Intercollegiate Rocket Engineering Competition (IREC). IREC is held
-        in Utah and universities from around the world participate in it each year.
-        Before beginning a design encompassing all parts of…
-    </p>
-
-    <a href="hybrid_engine.html">
-        <button class="read-More-Button">Read More</button>
-    </a>
 
 
 </body>
+
 </html>
