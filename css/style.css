@@ -1,0 +1,39 @@
+body{
+    background-color:  #fefaef !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img{
+  border-radius: 10px;
+}
+
+#front-page-container {
+    position: relative;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+
+  #title-text {
+    font-family: 'Merriweather', serif;
+    font-size: 500px;
+    font-weight: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #main_img{
+      width: 75%;
+      opacity: 0.5;
+  }
+
+  .row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    padding-bottom: 100px;
+  }
+
+  .col-lg-6{
+    padding-left: 90px !important;
+  }

@@ -1,13 +1,13 @@
 body{
-  background-color:  #fefaef !important;
-  font-family: 'Montserrat', sans-serif;
+    background-color:  #fefaef !important;
+    font-family: 'Montserrat', sans-serif;
 }
 
 img{
-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .article-container{
-  width: 1100px;
-  padding-left: 300px;
+    width: 1100px;
+    padding-left: 300px;
 }
