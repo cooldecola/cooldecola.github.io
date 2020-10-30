@@ -1,115 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Designing and Making a Hybrid Engine for a Rocket</title>
+
+    <!-- Stylsheets -->
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #fefaef;">
+        <a class="navbar-brand" href="index.html">Perpetual Motion</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <h1>Designing and Making a Hybrid Engine for a Rocket</h1>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
 
-    <p>The uOttawa Rocketry team was founded in Summer, 2016. My 
-        colleagues and I planned to design and fabricate a 
-        hybrid-propellant rocket for a competition called the 
-        Intercollegiate Rocket Engineering Competition (IREC). 
-        IREC is held in Utah and universities from around the 
-        world participate in it each year. Before beginning a 
-        design encompassing all parts of the rocket we decided 
-        to design and build the engine first, since it is the main 
-        component of the rocket. In the next section I will give a 
-        brief introduction to hybrid-propellant rockets and what our 
-        goals were in terms of fabricating the engine.
-    </p>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
 
-    <h1>Hybrid-Propellant Rocket Introduction</h1>
-    <p>Hybrid Rocket engines are reliant on motors that are composed 
-        of a solid fuel and a liquid oxidizer. This is unlike solid 
-        or liquid rocket engines where both fuel and oxidizer are 
-        either solid or liquid.
-    </p>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
 
-    <img src="hybrid_engine/p1.png" alt="">
-    <figcaption>The different configurations of the types of rockets</figcaption>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                </li>
 
-    <p>The above figure shows a classic hybrid rocket engine on the far 
-        right. This is the type of engine our team was aiming to make. 
-        Upon further research we found that the major components we 
-        needed to think about design-wise were the following:
-    </p>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
 
-    <ul>
-        <li>Oxidizer Choice</li>
-        <li>Fuel Choice and Fuel Core</li>
-        <li>Control Valve</li>
-        <li>Injector</li>
-        <li>Nozzle</li>
-        <li>Combustion Chamber</li>
-    </ul>
+            </ul>
 
-    <img src="hybrid_engine/p2.png" alt="">
-    <figcaption>A schematic showing the internals of the hybrid-propellant rocket</figcaption>
-    
-    <h1>Oxidizer Choice</h1>
-    <p>We chose Nitrous Oxide (N2O) as the oxidizer because of it’s 
-        accessibility, safety and its wide use among student teams. 
-        We explored other oxidizers such as liquid oxygen, hydrogen 
-        peroxide, Peroxide (HTP) and RFNA but quickly realized that 
-        they would be either too difficult to obtain or too dangerous 
-        to use. Upon doing some further research we found that N2O is 
-        slightly sub-critical at room temperature and pressure. This 
-        means that when N2O is enclosed in a tank it can coexist as 
-        both liquid and vapor. When the tank valve is opened, changes 
-        in pressure causes the liquid N_2O to boil off and the increase 
-        in vapor keeps the tank pressure relatively stable 
-        (self-pressurization). The willingness for N_2O to keep the 
-        tank self-pressurized implies that our injector plate can be 
-        crudely designed to still work effectively. Other gases that 
-        can’t self-pressurize are at risk of back-flow; where the 
-        pressure inside the tank reduces substantially causing the 
-        combustion to flow back into the oxidation tank and potentially 
-        cause an explosion. There was one downside however in choosing 
-        N2O which relates to N2O’s density. We wanted to use the liquid 
-        portion of N2O , but due to it’s density, it falls to the bottom 
-        of the tank and gives us uneasy access to it. The way we went 
-        around this problem will be discussed in the Nitrous Oxide Test 
-        Stand section. </p>
+        </div>
+    </nav>
+
+    <div class="article-container">
+        <h1>Designing and Making a Hybrid Engine for a Rocket</h1>
+
+        <p>The uOttawa Rocketry team was founded in Summer, 2016. My
+            colleagues and I planned to design and fabricate a
+            hybrid-propellant rocket for a competition called the
+            Intercollegiate Rocket Engineering Competition (IREC).
+            IREC is held in Utah and universities from around the
+            world participate in it each year. Before beginning a
+            design encompassing all parts of the rocket we decided
+            to design and build the engine first, since it is the main
+            component of the rocket. In the next section I will give a
+            brief introduction to hybrid-propellant rockets and what our
+            goals were in terms of fabricating the engine.
+        </p>
+
+        <h1>Hybrid-Propellant Rocket Introduction</h1>
+        <p>Hybrid Rocket engines are reliant on motors that are composed
+            of a solid fuel and a liquid oxidizer. This is unlike solid
+            or liquid rocket engines where both fuel and oxidizer are
+            either solid or liquid.
+        </p>
+
+        <img src="hybrid_engine/p1.png" alt="">
+        <figcaption>The different configurations of the types of rockets</figcaption>
+
+        <p>The above figure shows a classic hybrid rocket engine on the far
+            right. This is the type of engine our team was aiming to make.
+            Upon further research we found that the major components we
+            needed to think about design-wise were the following:
+        </p>
+
+        <ul>
+            <li>Oxidizer Choice</li>
+            <li>Fuel Choice and Fuel Core</li>
+            <li>Control Valve</li>
+            <li>Injector</li>
+            <li>Nozzle</li>
+            <li>Combustion Chamber</li>
+        </ul>
+
+        <img src="hybrid_engine/p2.png" alt="">
+        <figcaption>A schematic showing the internals of the hybrid-propellant rocket</figcaption>
+
+        <h1>Oxidizer Choice</h1>
+        <p>We chose Nitrous Oxide (N2O) as the oxidizer because of it’s
+            accessibility, safety and its wide use among student teams.
+            We explored other oxidizers such as liquid oxygen, hydrogen
+            peroxide, Peroxide (HTP) and RFNA but quickly realized that
+            they would be either too difficult to obtain or too dangerous
+            to use. Upon doing some further research we found that N2O is
+            slightly sub-critical at room temperature and pressure. This
+            means that when N2O is enclosed in a tank it can coexist as
+            both liquid and vapor. When the tank valve is opened, changes
+            in pressure causes the liquid N_2O to boil off and the increase
+            in vapor keeps the tank pressure relatively stable
+            (self-pressurization). The willingness for N_2O to keep the
+            tank self-pressurized implies that our injector plate can be
+            crudely designed to still work effectively. Other gases that
+            can’t self-pressurize are at risk of back-flow; where the
+            pressure inside the tank reduces substantially causing the
+            combustion to flow back into the oxidation tank and potentially
+            cause an explosion. There was one downside however in choosing
+            N2O which relates to N2O’s density. We wanted to use the liquid
+            portion of N2O , but due to it’s density, it falls to the bottom
+            of the tank and gives us uneasy access to it. The way we went
+            around this problem will be discussed in the Nitrous Oxide Test
+            Stand section. </p>
 
         <h1>Fuel Choice and Fuel Core</h1>
-        <p>Paraffin, also known as candle wax, was our choice for fuel. Paraffin as a fuel has a couple of benefits and it is listed here:</p>
+        <p>Paraffin, also known as candle wax, was our choice for fuel. Paraffin as a fuel has a couple of benefits and
+            it is listed here:</p>
         <ul>
             <li>Paraffin is extremely stable making it less hazardous</li>
             <li>Relatively low melting temperature allows us to easily shape paraffin into the fuel core</li>
         </ul>
 
-        <p>The process we decided to use when fabricating the fuel grain involved melting the paraffin in a water bath and then slowly pouring paraffin into an ABS pipe while keeping a smaller pipe rotating in the center. The smaller pipe enables the grain to have the inner diameter it needs to allow the oxidizer to flow through.</p>
+        <p>The process we decided to use when fabricating the fuel grain involved melting the paraffin in a water bath
+            and then slowly pouring paraffin into an ABS pipe while keeping a smaller pipe rotating in the center. The
+            smaller pipe enables the grain to have the inner diameter it needs to allow the oxidizer to flow through.
+        </p>
 
         <img src="hybrid_engine/p3.png" alt="">
         <figcaption>Shaping paraffin into it's fuel core shape</figcaption>
 
         <h1>Control Valves and Injector Plate</h1>
-        <p>The flow of N2O will dictate the rate of combustion and 
-            therefore control is important. We decided to use a solenoid 
-            valve because they can be controlled remotely as they work 
-            through electricity and no mechanical components are needed. 
-            We used CGA-326 valve which are safe for nitrous oxide use 
-            and will also work with the nitrous oxide tank fitting that 
-            we have. Designing and building the injector plate was 
-            relatively easy to do. As discussed before, the self 
-            pressurizing and regulating feature of the N2O allowed us 
+        <p>The flow of N2O will dictate the rate of combustion and
+            therefore control is important. We decided to use a solenoid
+            valve because they can be controlled remotely as they work
+            through electricity and no mechanical components are needed.
+            We used CGA-326 valve which are safe for nitrous oxide use
+            and will also work with the nitrous oxide tank fitting that
+            we have. Designing and building the injector plate was
+            relatively easy to do. As discussed before, the self
+            pressurizing and regulating feature of the N2O allowed us
             to have a simple design.
         </p>
 
         <img src="hybrid_engine/p4.png" alt="">
         <figcaption>Injector Plate Design</figcaption>
 
-        <p>We drilled twenty-four 0.05118′ outlets into the injector plate as can be seen in the image above. This allowed atomization of N2O. The following is a cold flow test of N2O through the injector plate</p>
+        <p>We drilled twenty-four 0.05118′ outlets into the injector plate as can be seen in the image above. This
+            allowed atomization of N2O. The following is a cold flow test of N2O through the injector plate</p>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/jK42Fvvm9_w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jK42Fvvm9_w" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         <h1>Nozzle</h1>
 
-        <p>We were able to design the nozzle using rocket equations. After choosing the output flow we wanted (Mach 1 at the throat) we were able to determine nozzle throat area, exit area and subsequently the rest of the geometry.</p>
+        <p>We were able to design the nozzle using rocket equations. After choosing the output flow we wanted (Mach 1 at
+            the throat) we were able to determine nozzle throat area, exit area and subsequently the rest of the
+            geometry.</p>
 
         <img src="hybrid_engine/p5.png" alt="">
         <figcaption>Our nozzle design</figcaption>
@@ -117,44 +175,60 @@
         <p>After determining the nozzle dimensions we were able to determine combustion chamber dimensions as well.</p>
         <img src="hybrid_engine/p6.png" alt="">
         <figcaption>Combustion Chamber (fuel core) design</figcaption>
-        
+
         <p>The nozzle would be attached to the combustion chamber through 6 quarter inch bolts.</p>
 
         <h1>Nitrous Oxide Tank Stand</h1>
-        <p>As mentioned previously the need to access the liquid portion of the oxidizer tank posed a challenge for the team. The way we resolved this problem is by building a stand that would orient the tank 60 degrees from the vertical. A schematic of the design is shown below</p>
+        <p>As mentioned previously the need to access the liquid portion of the oxidizer tank posed a challenge for the
+            team. The way we resolved this problem is by building a stand that would orient the tank 60 degrees from the
+            vertical. A schematic of the design is shown below</p>
 
         <img src="hybrid_engine/p7.png" alt="">
         <figcaption>Design of our N20 tank stand</figcaption>
 
-        <p>We build the stand using plywood and wood glue. We used strap buckles to prevent the tank from sliding off. The following image shows our completed stank with the tank</p>
+        <p>We build the stand using plywood and wood glue. We used strap buckles to prevent the tank from sliding off.
+            The following image shows our completed stank with the tank</p>
 
         <img src="hybrid_engine/p9.png" alt="">
 
         <h1>Test Stand</h1>
-        <p>Test stands for rocket engines can either be vertically oriented or horizontally. Ours was horizontal. The image below shows our design which was made of large planks of wood nailed together to provide an even elevated surface for the motor to rest on. A thin layer of sheet metal was bolted on from the top to provide protection and have a stronger foundation for the railings and subsequent stopper that needed to be bolted into the table.</p>
+        <p>Test stands for rocket engines can either be vertically oriented or horizontally. Ours was horizontal. The
+            image below shows our design which was made of large planks of wood nailed together to provide an even
+            elevated surface for the motor to rest on. A thin layer of sheet metal was bolted on from the top to provide
+            protection and have a stronger foundation for the railings and subsequent stopper that needed to be bolted
+            into the table.</p>
 
         <img src="hybrid_engine/p10.png" alt="">
 
-        <p>The image below shows a linear rail system an aluminum platform mounted on to it (allowing sliding). To the platform the motor was bolted down using a pair of 3 aluminum made clamps.</p>
+        <p>The image below shows a linear rail system an aluminum platform mounted on to it (allowing sliding). To the
+            platform the motor was bolted down using a pair of 3 aluminum made clamps.</p>
 
         <img src="hybrid_engine/p11.png" alt="">
-        
+
         <p>The configuration of the test stand to the motor is as follows:</p>
 
         <img src="hybrid_engine/p12.png" alt="">
 
-        <p>For a clearer idea of how the system worked please refer to this image of the unfinished test stand to get a clearer visualization</p>
+        <p>For a clearer idea of how the system worked please refer to this image of the unfinished test stand to get a
+            clearer visualization</p>
 
         <img src="hybrid_engine/p13.png" alt="">
         <figcaption>Unfinished test stand</figcaption>
 
-        <p>On the stopper, which prevented the engine from flying off the rails when turned on, we attached a load cell which recorded thrust measurements. All in all, the following image is our final setup before testing</p>
+        <p>On the stopper, which prevented the engine from flying off the rails when turned on, we attached a load cell
+            which recorded thrust measurements. All in all, the following image is our final setup before testing</p>
 
         <img src="hybrid_engine/p14.png" alt="">
 
         <p>A video showing the engine running:</p>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/N7zMoQ-nas8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-    </body>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/N7zMoQ-nas8" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    </div>
+
+
+</body>
+
 </html>

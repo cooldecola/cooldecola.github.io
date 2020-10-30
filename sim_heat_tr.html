@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulating Heat Transfer in C++</title>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulating Heat Transfer in C++</title>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Stylsheets -->
+  <link rel="stylesheet" href="css/article.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+
 
 </head>
+
 <body>
 
+  <div class="article-container">
     <h1>Simulating Heat Transfer in C++</h1>
-    <p>In order to improve my C++ skills and also learn more about computational methods I decided to take on a small project to conduct a heat transfer simulation using the finite difference method in C++. I decided to use a simple square geometry and made the following assumptions:</p>
+    <p>In order to improve my C++ skills and also learn more about computational methods I decided to take on a small
+      project to conduct a heat transfer simulation using the finite difference method in C++. I decided to use a simple
+      square geometry and made the following assumptions:</p>
     <ul>
-        <li>System is steady state</li>
-        <li>No energy generated</li>
-        <li>No source of heat</li>
-        <li>2-D dimensions(x and y)</li>
+      <li>System is steady state</li>
+      <li>No energy generated</li>
+      <li>No source of heat</li>
+      <li>2-D dimensions(x and y)</li>
     </ul>
     <p>The heat equation in Cartesian coordinates is:</p>
 
@@ -27,7 +50,8 @@
 
     $$\frac{\partial^2T}{\partial^2x}+\frac{\partial^2T}{\partial^2y}=0$$
 
-    <p>To use the finite difference method (FDM), I used the center Euler method. The general equation is shown in the following two lines in i and j directions respectively:</p>
+    <p>To use the finite difference method (FDM), I used the center Euler method. The general equation is shown in the
+      following two lines in i and j directions respectively:</p>
 
     $${\frac{\partial u}{\partial x}}_i = \frac{1}{\Delta x}(u_{i+1}-2u_{i} + u_{i+1})$$
     $${\frac{\partial u}{\partial y}}_j = \frac{1}{\Delta y}(u_{j+1}-2u_{j} + u_{j+1})$$
@@ -41,13 +65,15 @@
     <img src="sim_heat_tr_img/p1.png" alt="">
 
     <h1>Boundary Consitions</h1>
-    <p>I chose the Boundary conditions to be T_hot = 160 C, T_cold = 20 C. The hot and cold sides of the square can be seen in Figure 1:</p>
+    <p>I chose the Boundary conditions to be T_hot = 160 C, T_cold = 20 C. The hot and cold sides of the square can be
+      seen in Figure 1:</p>
 
     <img src="sim_heat_tr_img/p2.png" alt="">
     <figcaption>Figure 1 - Schematic of square with BC</figcaption>
 
     <h1>C++ Code</h1>
-    <p>I wrote the following C++ code to simulate the heat transfer problem. In this code I I’ve also written a Gaussian elimination solver which solves the solution matrix that is set up in the main function.</p>
+    <p>I wrote the following C++ code to simulate the heat transfer problem. In this code I I’ve also written a Gaussian
+      elimination solver which solves the solution matrix that is set up in the main function.</p>
 
     <pre>
         <code>
@@ -228,15 +254,22 @@ int main(){
     </pre>
 
     <h1>Result</h1>
-    <p>In order to plot the result that C++ produced I used a software called gnuplot which is a command line based plotter.</p>
+    <p>In order to plot the result that C++ produced I used a software called gnuplot which is a command line based
+      plotter.</p>
     <img src="sim_heat_tr_img/p3.png" alt="">
     <figcaption>Figure 2 - Heat Map using 5 points</figcaption>
 
     <img src="sim_heat_tr_img/p4.png" alt="">
     <figcaption>Figure 3 - Heat Map using 10 points</figcaption>
 
-    <p>As you can see from the above figures the temperature distribution seems realistic and confers with solutions found elsewhere on the internet and texts.</p>
+    <p>As you can see from the above figures the temperature distribution seems realistic and confers with solutions
+      found elsewhere on the internet and texts.</p>
+
+
+  </div>
+
 
 
 </body>
+
 </html>

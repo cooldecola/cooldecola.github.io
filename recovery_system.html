@@ -1,93 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building the Recovery System of a Rocket with SolidWorks and ANSYS</title>
-    
+
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Stylsheets -->
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #fefaef;">
+        <a class="navbar-brand" href="index.html">Perpetual Motion</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <h1>Building the Recovery System of a Rocket with SolidWorks and ANSYS</h1>
-    <p>The University of Ottawa Rocket Team is a relatively new team at uOttawa and we competed in the Intercollegiate Rocket Engineering Competition (IREC) for the first time in June 2018 placing 17th out of 48 teams in our specific division, which was the 10,000 ft-COTS (commercially off the shelf). The part that I was responsible for designing and manufacturing was the recovery system, as the title suggests.</p>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
 
-    <h2>Concept of the Recovery System</h2>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
 
-    <p>The purpose of the recovery system is to recover the rocket after reaching apogee. This is done by deploying a parachute out the body. Some engineering design challenges that were tackled were the following:</p>
-    <ul>
-        <li>Design Schematic (Dimensions; designing for manufacturability and ease of assembly)</li>
-        <li>Mechanism for Parachute Deployment</li>
-        <li>Material, Dimensions and Stresses (Determining the right materials and dimensions to withstand external forces)</li>
-        <li>Parachute Swivel Mechanism (Allowing the shroud lines of the parachute to freely swivel about the horizontal axis thus preventing entanglement)</li>
-    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
 
-    <h2>Design Schematic</h2>
-    <p>The recovery system facilitates a successful decent by allowing the parachute to hold the entire weight of the rocket plus impulse forces (experienced in the case of late deployment). An early design idea was to manufacture a metal plate that could be bolted in from outside the body of the rocket and this circular plate would hold the parachute shroud lines as seen in the following picture:</p>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Portfolio</a>
+                </li>
 
-    <img src="rec_sys_img/p1.jpg" alt="">
-    <figcaption>A schematic showing the plate bolted in from the outside of the body. In the center is an eye-bold (discussed below)</figcaption>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
 
-    <p>However, I soon realized that this simple design, although easy to manufacture, would prove difficult during assembly as it would be hard to align and bolt in from the outside due to the constricting shape of the body.</p>
-    <br>
-    <p>To improve the design the shape was changed from a simple plate to a cylindrical H-beam. This way the recovery system could be additionally used to anchor the two outer body tubes. In the following picture you can see the schematic for this design:</p>
-    <img src="rec_sys_img/p2.jpg" alt="">
-    <figcaption>The ‘H’ shaped coupler/recovery system holds the upper and lower parts of the rocket (shown in blue) together while also housing components for recovery</figcaption>
+            </ul>
 
-    <h2>Mechanism for Parachute Deployment</h2>
-    <p>Now that a general design schematic was finalized the next step was to integrate a deployment system. The way in which a lot of rockets made by universities deploy their parachutes is by pressurizing the body of the rocket to ‘pop’ off the nose cone and push the parachute out. For this system we used the CD3 Adventurer Kit Carbon Dioxide (CO2) Ejection System purchased from Apogee Rockets. They seem to be a reliable place to buy rocketry related items, in fact we also purchased our phenolic blue tube from them. I’ve posted a link <a href="https://www.apogeerockets.com/Ejection-Systems/CO2-Ejection-Systems/CD3-Adventurer-Kit-12g-16g"> here</a> for anyone interested.</p>
-    
-    <h2>Material, Dimensions and Stresses</h2>
-    <p>The material that was chosen for the mount (outlined in black in the figure above) was aluminum 2024 because of it’s low cost, high strength and low density properties. My intuition was that quarter inch thickness of aluminum 2024 would suffice in withstanding the forces upon deployment.</p>
-    <p>The way we determined the maximum forces was to understand the worst case scenario. The worst case scenario is the situation in which the parachute does not deploy at apogee and instead deploys with a six second delay. The downward velocity at that point would be 60 m/s therefore resulting in an impulse force of ~22,800 N. In order for the recovery system to work, it needs to withstand it’s own weight plus the impulse forces and with an additional safety factor of around 2.</p>
-    <p>I used ANSYS to conduct an FEA analysis to check if the dimensions of the aluminum would suffice, and it turned out that my intuition of quarter inch were correct!</p>
-    <img src="rec_sys_img/p3.png" alt="">
+        </div>
+    </nav>
 
-    <p>Now in order to determine the specifications on the bolts I compiled an excel sheet which calculated the stresses on the bolts and body as a function of bolt diameter, using the principles of machine design and using the following equations (of bolt and body, respectively):</p>
+    <div class="article-container">
 
-    $$\sigma_{bolt} = \frac {4F}{\pi d^{2}}$$
-    $$\sigma_{body} = \frac {F}{td}$$
+        <h1>Building the Recovery System of a Rocket with SolidWorks and ANSYS</h1>
+        <p>The University of Ottawa Rocket Team is a relatively new team at uOttawa and we competed in the
+            Intercollegiate Rocket Engineering Competition (IREC) for the first time in June 2018 placing 17th out of 48
+            teams in our specific division, which was the 10,000 ft-COTS (commercially off the shelf). The part that I
+            was responsible for designing and manufacturing was the recovery system, as the title suggests.</p>
 
-    <p>Where t is the thickness of the phenolic tube.</p>
-    <p>The results indicated from the excel spreadsheet was that M3 bolts would give a safety factor of 2, using 8 bolts.</p>
+        <h2>Concept of the Recovery System</h2>
 
-    <img src="rec_sys_img/p4.png" alt="">
+        <p>The purpose of the recovery system is to recover the rocket after reaching apogee. This is done by deploying
+            a parachute out the body. Some engineering design challenges that were tackled were the following:</p>
+        <ul>
+            <li>Design Schematic (Dimensions; designing for manufacturability and ease of assembly)</li>
+            <li>Mechanism for Parachute Deployment</li>
+            <li>Material, Dimensions and Stresses (Determining the right materials and dimensions to withstand external
+                forces)</li>
+            <li>Parachute Swivel Mechanism (Allowing the shroud lines of the parachute to freely swivel about the
+                horizontal axis thus preventing entanglement)</li>
+        </ul>
 
-    <h2>Parachute Swivel Mechanism</h2>
-    <p>Another thing we had to take into consideration was to allow for swivel motion of the parachute shroud lines to prevent them from getting tangled.</p>
-    <img src="rec_sys_img/p5.png" alt="">
-    <p>For this, initially I planned to use load bearing eye-bolts that would be mounted in the center. However after discussing with a professor we realized that the load bearing eye-bolts only allow swiveling when there is minimal load exerted on it. They are mostly used for carrying large shipping containers or for similar purposes where the swivel feature is not as important when load is applied. To fix this, we used regular eye-bolts and two thrust-needle roller bearings on each side of the mount. Lock nuts were added to prevent the eye-bolt from self screwing off.</p>
-    <img src="rec_sys_img/p6.png" alt="">
-    <figcaption>Thrust-needle roller bearings (purchased from McMaster-Carr)</figcaption>
-    <img src="rec_sys_img/p7.png" alt="">
-    <figcaption>Final assembly of the recovery system</figcaption>
+        <h2>Design Schematic</h2>
+        <p>The recovery system facilitates a successful decent by allowing the parachute to hold the entire weight of
+            the rocket plus impulse forces (experienced in the case of late deployment). An early design idea was to
+            manufacture a metal plate that could be bolted in from outside the body of the rocket and this circular
+            plate would hold the parachute shroud lines as seen in the following picture:</p>
 
-    <h2>Manufacturing and Testing</h2>
-    <p>I manufactured the base aluminum piece through a process of various 
-        machining tools. First I had to turn the piece and remove the 
-        external layer of metal to get an even diameter to hold on to 
-        via the chuck on the lathe machine. I continued turning on the 
-        lathe machine until I achieved the desired diameter. Next 
-        I bored from the inside and drilled the center holes and 
-        the carbon dioxide ejection system mounting holes.
-    </p>
+        <img src="rec_sys_img/p1.jpg" alt="">
+        <figcaption>A schematic showing the plate bolted in from the outside of the body. In the center is an eye-bold
+            (discussed below)</figcaption>
 
-    <br>
+        <p>However, I soon realized that this simple design, although easy to manufacture, would prove difficult during
+            assembly as it would be hard to align and bolt in from the outside due to the constricting shape of the
+            body.</p>
+        <br>
+        <p>To improve the design the shape was changed from a simple plate to a cylindrical H-beam. This way the
+            recovery system could be additionally used to anchor the two outer body tubes. In the following picture you
+            can see the schematic for this design:</p>
+        <img src="rec_sys_img/p2.jpg" alt="">
+        <figcaption>The ‘H’ shaped coupler/recovery system holds the upper and lower parts of the rocket (shown in blue)
+            together while also housing components for recovery</figcaption>
 
-    <p>
-        Next we needed to have screw holes evenly spread through out the circumference to be able to bolt the recovery system from inside the rocket body. In order to do this, I had help form the machinist at our schools machine shop since we did not have the proper tools to create the drill holes with such precision.
-    </p>
+        <h2>Mechanism for Parachute Deployment</h2>
+        <p>Now that a general design schematic was finalized the next step was to integrate a deployment system. The way
+            in which a lot of rockets made by universities deploy their parachutes is by pressurizing the body of the
+            rocket to ‘pop’ off the nose cone and push the parachute out. For this system we used the CD3 Adventurer Kit
+            Carbon Dioxide (CO2) Ejection System purchased from Apogee Rockets. They seem to be a reliable place to buy
+            rocketry related items, in fact we also purchased our phenolic blue tube from them. I’ve posted a link <a
+                href="https://www.apogeerockets.com/Ejection-Systems/CO2-Ejection-Systems/CD3-Adventurer-Kit-12g-16g">
+                here</a> for anyone interested.</p>
 
-    <img src="rec_sys_img/p11.png" alt="">
-    <figcaption> uOttawa's machinist helping us out!</figcaption>
-    <img src="rec_sys_img/p8.png" alt="">
-    <figcaption>Final part</figcaption>
-    <img src="rec_sys_img/p12.png" alt="">
+        <h2>Material, Dimensions and Stresses</h2>
+        <p>The material that was chosen for the mount (outlined in black in the figure above) was aluminum 2024 because
+            of it’s low cost, high strength and low density properties. My intuition was that quarter inch thickness of
+            aluminum 2024 would suffice in withstanding the forces upon deployment.</p>
+        <p>The way we determined the maximum forces was to understand the worst case scenario. The worst case scenario
+            is the situation in which the parachute does not deploy at apogee and instead deploys with a six second
+            delay. The downward velocity at that point would be 60 m/s therefore resulting in an impulse force of
+            ~22,800 N. In order for the recovery system to work, it needs to withstand it’s own weight plus the impulse
+            forces and with an additional safety factor of around 2.</p>
+        <p>I used ANSYS to conduct an FEA analysis to check if the dimensions of the aluminum would suffice, and it
+            turned out that my intuition of quarter inch were correct!</p>
+        <img src="rec_sys_img/p3.png" alt="">
 
-    <p>We successfully tested the recovery system</p>
-    <img src="rec_sys_img/p9.jpg" width="500" alt="">
+        <p>Now in order to determine the specifications on the bolts I compiled an excel sheet which calculated the
+            stresses on the bolts and body as a function of bolt diameter, using the principles of machine design and
+            using the following equations (of bolt and body, respectively):</p>
 
+        $$\sigma_{bolt} = \frac {4F}{\pi d^{2}}$$
+        $$\sigma_{body} = \frac {F}{td}$$
+
+        <p>Where t is the thickness of the phenolic tube.</p>
+        <p>The results indicated from the excel spreadsheet was that M3 bolts would give a safety factor of 2, using 8
+            bolts.</p>
+
+        <img src="rec_sys_img/p4.png" alt="">
+
+        <h2>Parachute Swivel Mechanism</h2>
+        <p>Another thing we had to take into consideration was to allow for swivel motion of the parachute shroud lines
+            to prevent them from getting tangled.</p>
+        <img src="rec_sys_img/p5.png" alt="">
+        <p>For this, initially I planned to use load bearing eye-bolts that would be mounted in the center. However
+            after discussing with a professor we realized that the load bearing eye-bolts only allow swiveling when
+            there is minimal load exerted on it. They are mostly used for carrying large shipping containers or for
+            similar purposes where the swivel feature is not as important when load is applied. To fix this, we used
+            regular eye-bolts and two thrust-needle roller bearings on each side of the mount. Lock nuts were added to
+            prevent the eye-bolt from self screwing off.</p>
+        <img src="rec_sys_img/p6.png" alt="">
+        <figcaption>Thrust-needle roller bearings (purchased from McMaster-Carr)</figcaption>
+        <img src="rec_sys_img/p7.png" alt="">
+        <figcaption>Final assembly of the recovery system</figcaption>
+
+        <h2>Manufacturing and Testing</h2>
+        <p>I manufactured the base aluminum piece through a process of various
+            machining tools. First I had to turn the piece and remove the
+            external layer of metal to get an even diameter to hold on to
+            via the chuck on the lathe machine. I continued turning on the
+            lathe machine until I achieved the desired diameter. Next
+            I bored from the inside and drilled the center holes and
+            the carbon dioxide ejection system mounting holes.
+        </p>
+
+        <br>
+
+        <p>
+            Next we needed to have screw holes evenly spread through out the circumference to be able to bolt the
+            recovery system from inside the rocket body. In order to do this, I had help form the machinist at our
+            schools machine shop since we did not have the proper tools to create the drill holes with such precision.
+        </p>
+
+        <img src="rec_sys_img/p11.png" alt="">
+        <figcaption> uOttawa's machinist helping us out!</figcaption>
+        <img src="rec_sys_img/p8.png" alt="">
+        <figcaption>Final part</figcaption>
+        <img src="rec_sys_img/p12.png" alt="">
+
+        <p>We successfully tested the recovery system</p>
+        <img src="rec_sys_img/p9.jpg" width="500" alt="">
+
+
+
+    </div>
 
 </body>
+
 </html>
