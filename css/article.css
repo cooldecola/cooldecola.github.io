@@ -11,3 +11,28 @@ img{
     width: 1100px;
     padding-left: 300px;
 }
+
+.col-lg-6{
+  margin-left: 90px;
+}
+
+@media (max-width: 993px){
+
+  .article-img{
+    width: 300px;
+  }
+
+  .article-container{
+    width: 400px !important;
+    padding-left: 30px;
+  }
+
+  .col-lg-6{
+    margin-left: 30px !important; 
+  }
+
+  iframe{
+    width: 350px; 
+  }
+
+}
